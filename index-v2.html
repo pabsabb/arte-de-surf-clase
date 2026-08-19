@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fdfce9">
+<meta name="description" content="Clase en vivo y gratis: creá tu propio pedacito de mar con resina, desde cero. Domingo 6 de septiembre, 19:00 hs (UY). Cupos limitados.">
+<meta property="og:title" content="Creá tu propio pedacito de mar con resina, desde cero">
+<meta property="og:description" content="Clase en vivo y gratis con Mathías Carvalho. El método paso a paso para tu primera obra oceánica. Domingo 6 de septiembre.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/portada-v-900.jpg">
+<title>Creá tu propio pedacito de mar — Clase gratis en vivo | Mathías Carvalho (v2)</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+<link rel="preload" as="image" type="image/avif"
+      imagesrcset="img/autoridad-h-v-400.avif 400w, img/autoridad-h-v-600.avif 600w, img/autoridad-h-v-900.avif 900w"
+      imagesizes="(max-width:900px) 100vw, 480px" fetchpriority="high">
+
+<style>
+/* Loubag (de pago) → cuando tengas el archivo, subilo a /fonts y descomentá
+@font-face{font-family:'Loubag';src:url('fonts/loubag-bold.woff2') format('woff2');font-weight:700;font-display:swap}
+*/
+:root{
+  --azul:#286181;
+  --azul-osc:#1c465e;
+  --azul-claro:#3d7ea3;
+  --agua:#e6d5c3; /* acento: arena (antes verde agua) */
+  --crema:#fdfce9;
+  --blanco:#fff;
+  --negro:#141a1d;
+  --muted:#63737d;
+  --linea:#e6e3d4;
+  --titulo:'Loubag','Poppins',system-ui,sans-serif;
+  --texto:'Poppins',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--texto);color:var(--negro);background:var(--crema);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--titulo);font-weight:700;line-height:1.12;letter-spacing:-.015em;color:var(--azul-osc)}
+img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+.center{text-align:center}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:0;z-index:100;background:rgba(253,252,233,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.nav-in{max-width:1140px;margin:0 auto;padding:12px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--titulo);font-size:16px;color:var(--azul-osc);letter-spacing:.02em}
+.brand span{color:var(--azul-claro)}
+.nav-date{font-size:12.5px;color:var(--muted)}
+.nav .btn-sm{background:var(--azul);color:var(--crema);border:none;font-family:var(--texto);font-size:12.5px;font-weight:600;padding:10px 18px;border-radius:9px;cursor:pointer;letter-spacing:.03em}
+.nav .btn-sm:hover{background:var(--azul-osc)}
+
+/* ---------- HERO editorial ---------- */
+.hero{padding:70px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--azul-claro);margin-bottom:22px}
+.eyebrow::before{content:"";width:38px;height:1.5px;background:var(--agua)}
+.hero h1{font-size:clamp(34px,4.7vw,58px);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--azul-claro)}
+.hero p.lead{font-size:clamp(15.5px,1.5vw,18px);color:#46535c;font-weight:300;max-width:540px;margin-bottom:28px}
+.meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);margin-bottom:28px}
+.meta div{padding:14px 22px 14px 0;margin-right:22px;border-right:1px solid var(--linea)}
+.meta div:last-child{border-right:none;margin-right:0;padding-right:0}
+.meta dt{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:2px}
+.meta dd{font-size:14.5px;font-weight:600;color:var(--azul-osc)}
+.btn{display:inline-block;border:none;font-family:var(--texto);text-decoration:none;padding:19px 42px;border-radius:11px;font-size:15px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-blue{background:var(--azul);color:var(--crema);box-shadow:0 12px 28px rgba(40,97,129,.28)}
+.btn-blue:hover{background:var(--azul-osc)}
+.btn-cream{background:var(--crema);color:var(--azul-osc);box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.note{margin-top:13px;font-size:12.5px;color:var(--muted)}
+
+/* foto con arco (guiño a la tabla de surf) */
+.arco{position:relative;max-width:440px;margin-left:auto}
+.arco picture,.arco img{display:block;width:100%}
+.arco img{aspect-ratio:4/5;max-height:540px;object-fit:cover;object-position:center 20%;border-radius:220px 220px 22px 22px;box-shadow:0 26px 60px rgba(28,70,94,.28)}
+.arco::after{content:"";position:absolute;inset:14px -18px -18px 14px;border:1.5px solid var(--agua);border-radius:220px 220px 22px 22px;z-index:-1}
+.sello{position:absolute;left:-18px;bottom:34px;background:var(--azul-osc);color:var(--crema);border-radius:12px;padding:12px 16px;text-align:left;box-shadow:0 14px 30px rgba(0,0,0,.22)}
+.sello strong{display:block;font-family:var(--titulo);font-size:18px;color:var(--agua)}
+.sello span{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:rgba(253,252,233,.7)}
+
+/* ---------- TIRA DE DATOS ---------- */
+.strip{margin-top:64px;background:var(--azul-osc);color:var(--crema)}
+.strip-in{max-width:1140px;margin:0 auto;padding:26px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.strip b{display:block;font-family:var(--titulo);font-size:30px;color:var(--agua);font-weight:700}
+.strip span{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:rgba(253,252,233,.62)}
+
+/* ---------- SECCIONES ---------- */
+section.pad{padding:88px 0;content-visibility:auto;contain-intrinsic-size:auto 700px}
+.kicker{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--azul-claro);margin-bottom:14px}
+.h2{font-size:clamp(27px,3.4vw,42px);margin-bottom:14px}
+.h2 em{font-style:normal;color:var(--azul-claro)}
+.sub{font-size:16.5px;color:var(--muted);font-weight:300;max-width:640px;margin-bottom:12px}
+.center .sub{margin-left:auto;margin-right:auto}
+
+/* lista numerada editorial */
+.pasos{margin-top:44px;border-top:1px solid var(--linea)}
+.paso{display:grid;grid-template-columns:64px 1fr;gap:26px;padding:28px 0;border-bottom:1px solid var(--linea);align-items:start;transition:background .2s}
+.paso:hover{background:rgba(230,213,195,.09)}
+.paso .n{font-family:var(--titulo);font-size:30px;color:var(--agua);line-height:1}
+.paso h4{font-size:20px;margin-bottom:6px}
+.paso p{color:var(--muted);font-weight:300;font-size:15.5px;max-width:720px}
+
+/* banda de obras */
+.band{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.band figure{position:relative;aspect-ratio:3/4;overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.band figure:hover img{transform:scale(1.06)}
+.band figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 18px;background:linear-gradient(transparent,rgba(28,70,94,.9));color:var(--crema);font-size:13px}
+
+/* testimonios */
+.testi{background:var(--blanco)}
+.t-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px;text-align:left}
+.t-card{border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:var(--crema);display:flex;flex-direction:column}
+.yt{position:relative;aspect-ratio:16/9;background:var(--azul-osc);cursor:pointer;border:none;padding:0;width:100%;display:block}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.92}
+.yt:hover img{opacity:1}
+.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.yt-play span{width:62px;height:44px;border-radius:12px;background:rgba(28,70,94,.94);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.yt:hover .yt-play span{transform:scale(1.08)}
+.yt-play span::after{content:"";border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent var(--crema);margin-left:3px}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.t-quote{padding:22px 22px 8px;font-size:15px;font-weight:300;font-style:italic;flex:1;color:#2f3b42}
+.t-who{padding:8px 22px 20px;display:flex;align-items:center;gap:11px}
+.t-av{width:34px;height:34px;border-radius:50%;background:var(--azul);color:var(--crema);display:flex;align-items:center;justify-content:center;font-family:var(--titulo);font-size:14px}
+.t-name{font-size:14.5px;font-weight:600;line-height:1.2}
+.t-role{font-size:12.5px;color:var(--muted)}
+
+/* quien soy — banda azul */
+.bio{background:var(--azul-osc);color:var(--crema)}
+.bio h2,.bio .h2{color:var(--crema)}
+.bio .kicker{color:var(--agua)}
+.bio-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.bio-photo{position:relative;border-radius:16px;overflow:hidden;max-width:370px;box-shadow:0 22px 50px rgba(0,0,0,.3)}
+.bio-photo img{aspect-ratio:4/5;object-fit:cover;object-position:center 25%;width:100%}
+.bio p{color:rgba(253,252,233,.82);font-weight:300;margin-bottom:14px;font-size:16px}
+.bio p strong{color:var(--crema);font-weight:600}
+.firma{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.firma span{border:1px solid rgba(230,213,195,.5);color:var(--agua);border-radius:100px;padding:7px 14px;font-size:12.5px}
+
+/* para quien */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:44px;border:1px solid var(--linea);border-radius:18px;overflow:hidden}
+.dual>div{padding:34px}
+.dual .si{background:var(--blanco)}
+.dual .no{background:rgba(40,97,129,.05);border-left:1px solid var(--linea)}
+.dual h3{font-size:19px;margin-bottom:18px}
+.dual .si h3{color:var(--azul)}
+.dual .no h3{color:var(--muted)}
+.dual li{list-style:none;display:flex;gap:11px;margin-bottom:13px;font-size:15px;font-weight:300;color:#3b464d}
+.dual .si li::before{content:"✓";color:var(--azul-claro);font-weight:600}
+.dual .no li::before{content:"✕";color:#a9b4ba;font-weight:600}
+
+/* cierre */
+.cierre{background:var(--azul);color:var(--crema);text-align:center;padding:90px 26px}
+.cierre h2{color:var(--crema);font-size:clamp(26px,3.4vw,40px);max-width:860px;margin:0 auto 16px}
+.cierre h2 em{font-style:normal;color:var(--agua)}
+.cierre p{color:rgba(253,252,233,.8);font-weight:300;max-width:600px;margin:0 auto 32px}
+.cierre small{display:block;margin-top:18px;font-size:12.5px;color:rgba(253,252,233,.55)}
+
+footer{background:var(--azul-osc);color:rgba(253,252,233,.5);text-align:center;padding:30px 26px;font-size:12.5px}
+footer a{color:rgba(253,252,233,.75)}
+footer .legal{font-size:11px;color:rgba(253,252,233,.3);max-width:600px;margin:8px auto 0}
+
+/* pop up */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:18px}
+.modal.open{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(20,26,29,.78);backdrop-filter:blur(5px)}
+.modal-box{position:relative;width:100%;max-width:420px;max-height:92vh;overflow:auto;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.4);animation:pop .25s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.modal-top{background:var(--azul-osc);color:var(--crema);padding:12px;text-align:center;font-size:12.5px}
+.modal-top strong{color:var(--agua)}
+.modal-x{position:absolute;top:9px;right:9px;width:31px;height:31px;border:none;border-radius:50%;background:rgba(253,252,233,.2);color:var(--crema);cursor:pointer}
+.fcard{background:var(--blanco);padding:30px 26px 26px;border-radius:0 0 18px 18px}
+.fcard h3{font-size:22px;margin-bottom:5px}
+.fcard .fs{font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:20px}
+.fcard input{width:100%;padding:15px 16px;border:1.5px solid var(--linea);border-radius:10px;font-size:16px;font-family:inherit;margin-bottom:11px}
+.fcard input:focus{outline:none;border-color:var(--agua);box-shadow:0 0 0 3px rgba(230,213,195,.3)}
+.fcard button{width:100%;background:var(--azul);color:var(--crema);border:none;padding:17px;border-radius:10px;font-family:inherit;font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;cursor:pointer}
+.fcard button:hover{background:var(--azul-osc)}
+.ftrust{text-align:center;font-size:12px;color:var(--muted);margin-top:11px}
+body.modal-open{overflow:hidden}
+
+/* sticky mobile */
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--crema);border-top:1px solid var(--linea);padding:11px 16px;z-index:99;transform:translateY(110%);transition:transform .25s}
+.sticky.show{transform:none}
+.sticky a{display:block;background:var(--azul);color:var(--crema);text-decoration:none;text-align:center;padding:15px;border-radius:10px;font-weight:600;font-size:14.5px;text-transform:uppercase;letter-spacing:.03em}
+
+@media (max-width:900px){
+  .hero{padding:26px 0 0}
+  .hero-grid,.bio-grid,.t-grid,.dual{grid-template-columns:1fr;gap:24px}
+  .arco{order:-1;max-width:100%;margin:0}
+  .arco img{aspect-ratio:16/11;max-height:215px;border-radius:120px 120px 16px 16px;object-position:center 24%}
+  .arco::after{display:none}
+  .sello{left:12px;bottom:12px;padding:9px 13px}
+  .sello strong{font-size:15px}
+  .nav-date{display:none}
+  .hero h1{font-size:28px;margin-bottom:12px}
+  .hero p.lead{font-size:14px;margin-bottom:18px}
+  .meta{margin-bottom:20px}
+  .meta div{padding:10px 14px 10px 0;margin-right:14px}
+  .meta dd{font-size:12.5px}
+  .btn{width:100%;padding:17px;font-size:14.5px}
+  .strip{margin-top:34px}
+  .strip-in{grid-template-columns:1fr 1fr;gap:22px}
+  section.pad{padding:58px 0}
+  .paso{grid-template-columns:44px 1fr;gap:16px;padding:22px 0}
+  .band{grid-template-columns:1fr 1fr}
+  .band figure:last-child{display:none}
+  .dual .no{border-left:none;border-top:1px solid var(--linea)}
+  .sticky{display:block}
+  body{padding-bottom:76px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-in">
+    <div class="brand">ARTE DE <span>SURF</span></div>
+    <div class="nav-date">Domingo 6 de septiembre · 19:00 hs · Online y gratis</div>
+    <button class="btn-sm" data-open-modal>Reservar mi lugar</button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Clase en vivo · 100% gratis</div>
+        <h1>Creá tu propio <em>pedacito de mar</em> con resina, desde cero</h1>
+        <p class="lead">Aprendé en una clase en vivo el método paso a paso para crear playas con alto impacto visual, evitar los errores más comunes y transformar esta técnica en una oportunidad para emprender.</p>
+
+        <dl class="meta">
+          <div><dt>Fecha y hora</dt><dd>Dom 6 sep · 19:00 hs</dd></div>
+          <div><dt>Dónde</dt><dd>Online, en vivo</dd></div>
+          <div><dt>Valor</dt><dd>Gratis</dd></div>
+        </dl>
+
+        <button class="btn btn-blue" data-open-modal>Quiero sumarme a la clase</button>
+        <p class="note">Cupos limitados · Te llega el acceso por email</p>
+      </div>
+
+      <div class="arco">
+        <picture>
+          <source type="image/avif" srcset="img/autoridad-h-v-400.avif 400w, img/autoridad-h-v-600.avif 600w, img/autoridad-h-v-900.avif 900w" sizes="(max-width:900px) 100vw, 440px">
+          <source type="image/webp" srcset="img/autoridad-h-v-400.webp 400w, img/autoridad-h-v-600.webp 600w, img/autoridad-h-v-900.webp 900w" sizes="(max-width:900px) 100vw, 440px">
+          <img src="img/autoridad-h-v-900.jpg" srcset="img/autoridad-h-v-600.jpg 600w, img/autoridad-h-v-900.jpg 900w" sizes="(max-width:900px) 100vw, 440px" width="1200" height="1600" fetchpriority="high" decoding="async" alt="Mathías Carvalho junto a sus obras de arte oceánico en resina">
+        </picture>
+        <div class="sello"><strong>1.500+ obras</strong><span>400+ alumnos · Louvre</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="strip-in">
+      <div><b>400+</b><span>Personas formadas</span></div>
+      <div><b>1.500</b><span>Obras creadas</span></div>
+      <div><b>Louvre</b><span>Expuso en París</span></div>
+      <div><b>100%</b><span>Empiezan de cero</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ QUÉ VAS A APRENDER ============ -->
+<section class="pad">
+  <div class="wrap">
+    <div class="kicker">Qué vas a aprender</div>
+    <h2 class="h2">El método exacto para crear tu <em>primera obra oceánica</em></h2>
+    <p class="sub">En una sola clase en vivo vas a salir con un mapa claro para arrancar — y con la certeza de que sí es para vos.</p>
+
+    <div class="pasos">
+      <div class="paso">
+        <div class="n">01</div>
+        <div>
+          <h4>Cómo crear tu primera playa de mar con resina, paso a paso</h4>
+          <p>Materiales, capas, olas, arena, rocas, algas, acabado, etc. Con un método simple, tipo receta.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <div class="n">02</div>
+        <div>
+          <h4>Los 5 errores que te dejan trabado</h4>
+          <p>Lo que todos los principiantes hacen mal en sus primeros intentos — y cómo evitarlos sin frustrarte.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <div class="n">03</div>
+        <div>
+          <h4>Cómo puede convertirse en un ingreso propio</h4>
+          <p>Con números reales y una forma simple de empezar desde tu círculo cercano, sin publicidad ni seguidores.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <div class="n">04</div>
+        <div>
+          <h4>El kit mínimo para empezar</h4>
+          <p>Qué resina usar, qué herramientas necesitás de verdad y qué podés saltearte (sí, mucho menos de lo que pensás).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANDA DE OBRAS (full bleed) ============ -->
+<section class="band">
+  <figure>
+    <picture>
+      <source type="image/avif" srcset="img/portada-v-400.avif 400w, img/portada-v-600.avif 600w, img/portada-v-900.avif 900w" sizes="(max-width:900px) 50vw, 33vw">
+      <source type="image/webp" srcset="img/portada-v-400.webp 400w, img/portada-v-600.webp 600w, img/portada-v-900.webp 900w" sizes="(max-width:900px) 50vw, 33vw">
+      <img src="img/portada-v-900.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Volcado de resina turquesa sobre una obra de playa">
+    </picture>
+    <figcaption>El momento del volcado: donde nace la ola</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <source type="image/avif" srcset="img/foto4-v-400.avif 400w, img/foto4-v-600.avif 600w, img/foto4-v-900.avif 900w" sizes="(max-width:900px) 50vw, 33vw">
+      <source type="image/webp" srcset="img/foto4-v-400.webp 400w, img/foto4-v-600.webp 600w, img/foto4-v-900.webp 900w" sizes="(max-width:900px) 50vw, 33vw">
+      <img src="img/foto4-v-900.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Obra terminada de playa con resina">
+    </picture>
+    <figcaption>Obra terminada: arena, espuma y profundidad</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <source type="image/avif" srcset="img/autoridad-v-v-400.avif 400w, img/autoridad-v-v-600.avif 600w, img/autoridad-v-v-900.avif 900w" sizes="(max-width:900px) 50vw, 33vw">
+      <source type="image/webp" srcset="img/autoridad-v-v-400.webp 400w, img/autoridad-v-v-600.webp 600w, img/autoridad-v-v-900.webp 900w" sizes="(max-width:900px) 50vw, 33vw">
+      <img src="img/autoridad-v-v-900.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Obras de arte oceánico en resina expuestas">
+    </picture>
+    <figcaption>Piezas en exposición</figcaption>
+  </figure>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section class="pad testi">
+  <div class="wrap center">
+    <div class="kicker">Lo que dicen quienes ya lo hicieron</div>
+    <h2 class="h2">Personas reales. <em>Obras reales.</em></h2>
+    <p class="sub">Empezaron sin experiencia previa y hoy crean sus propias piezas.</p>
+
+    <div class="t-grid">
+      <div class="t-card">
+        <button class="yt" data-id="QWkW5OqRwbQ" aria-label="Reproducir testimonio de Silvana">
+          <img src="https://i.ytimg.com/vi/QWkW5OqRwbQ/mqdefault.jpg" width="320" height="180" loading="lazy" alt="Testimonio de Silvana">
+          <span class="yt-play"><span></span></span>
+        </button>
+        <p class="t-quote">“Cuando terminé mi primer cuadro dije: ¿esta obra la hice yo? No la tengo más porque me la volaron de las manos.”</p>
+        <div class="t-who"><div class="t-av">S</div><div><div class="t-name">Silvana</div><div class="t-role">Alumna del taller</div></div></div>
+      </div>
+      <div class="t-card">
+        <button class="yt" data-id="Ij5KJS-XmUM" aria-label="Reproducir testimonio de Silvia">
+          <img src="https://i.ytimg.com/vi/Ij5KJS-XmUM/mqdefault.jpg" width="320" height="180" loading="lazy" alt="Testimonio de Silvia">
+          <span class="yt-play"><span></span></span>
+        </button>
+        <p class="t-quote">“Es una receta paso a paso de cómo realizar un cuadro de principio a fin, con un nivel de detalle asombroso. No hay forma de errarle. No podía creer el resultado porque nunca había tocado resina antes.”</p>
+        <div class="t-who"><div class="t-av">S</div><div><div class="t-name">Silvia</div><div class="t-role">Alumna del taller</div></div></div>
+      </div>
+      <div class="t-card">
+        <button class="yt" data-id="8puqfCci1Y8" aria-label="Reproducir el video de la primera obra de Sofi">
+          <img src="https://i.ytimg.com/vi/8puqfCci1Y8/mqdefault.jpg" width="320" height="180" loading="lazy" alt="Primera obra de Sofi">
+          <span class="yt-play"><span></span></span>
+        </button>
+        <p class="t-quote">“Lo que ven acá lo dice todo.”</p>
+        <div class="t-who"><div class="t-av">S</div><div><div class="t-name">Sofi</div><div class="t-role">Su primera obra</div></div></div>
+      </div>
+      <div class="t-card">
+        <button class="yt" data-id="XO-9yG_1GQE" aria-label="Reproducir el video de la primera obra de Marina">
+          <img src="https://i.ytimg.com/vi/XO-9yG_1GQE/mqdefault.jpg" width="320" height="180" loading="lazy" alt="Primera obra de Marina">
+          <span class="yt-play"><span></span></span>
+        </button>
+        <p class="t-quote">“Las explicaciones fueron clarísimas y muy fáciles de aplicar, te sacaban el miedo. Quedé copadísima con el taller: es una actividad que se hace con mucho amor.”</p>
+        <div class="t-who"><div class="t-av">M</div><div><div class="t-name">Marina</div><div class="t-role">Su primera obra</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUIÉN SOY ============ -->
+<section class="pad bio">
+  <div class="wrap">
+    <div class="bio-grid">
+      <div class="bio-photo">
+        <picture>
+          <source type="image/avif" srcset="img/autoridad-v-v-400.avif 400w, img/autoridad-v-v-600.avif 600w, img/autoridad-v-v-900.avif 900w" sizes="(max-width:900px) 90vw, 370px">
+          <source type="image/webp" srcset="img/autoridad-v-v-400.webp 400w, img/autoridad-v-v-600.webp 600w, img/autoridad-v-v-900.webp 900w" sizes="(max-width:900px) 90vw, 370px">
+          <img src="img/autoridad-v-v-900.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Mathías Carvalho en su exposición">
+        </picture>
+      </div>
+      <div>
+        <div class="kicker">Quién soy</div>
+        <h2 class="h2">Aprendí solo, y por eso entiendo qué te traba.</h2>
+        <p>Soy Mathías Carvalho y vivo en La Barra, Uruguay. Hace unos años no tenía idea de arte: empecé a hacer cuadros de mar con resina en mi casa, sin saber nada. Me fue mal muchas veces.</p>
+        <p>Con el tiempo fui armando <strong>un método claro, paso a paso</strong>, que hace muy fácil lograr un buen resultado desde el comienzo.</p>
+        <p>Y ahí me pasó algo que no esperaba: la gente que veía mis cuadros los quería. Me los pidieron sin que los ofreciera. Después otra persona. Y otra. A mis alumnos les pasa lo mismo.</p>
+        <p>Hoy llevo <strong>más de 1.500 obras</strong>, exposiciones nacionales e internacionales (incluyendo el <strong>Louvre en París</strong>) y le enseñé a <strong>más de 400 personas</strong> que arrancaron de cero y hoy tienen resultados reales.</p>
+        <div class="firma">
+          <span>1.500+ obras</span><span>400+ alumnos</span><span>Louvre, París</span><span>La Barra, Uruguay</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARA QUIÉN ============ -->
+<section class="pad">
+  <div class="wrap center">
+    <div class="kicker">Antes de anotarte</div>
+    <h2 class="h2">¿Esta clase es para vos?</h2>
+    <div class="dual" style="text-align:left">
+      <div class="si">
+        <h3>Sí, es para vos si…</h3>
+        <ul>
+          <li>Querés crear algo con tus manos, aunque sientas que no sos creativo.</li>
+          <li>Te conecta el mar y te da curiosidad crear tu propia playa en un cuadro.</li>
+          <li>Querés sumar un ingreso extra desde tu casa, a tu ritmo y con algo que te guste.</li>
+          <li>Necesitás ver un método probado antes de animarte a empezar.</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3>No es para vos si…</h3>
+        <ul>
+          <li>No te gustan las manualidades o no conectás con el océano.</li>
+          <li>Si bien la clase sirve para otros proyectos, mi enfoque es específico en arte de playas.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="cierre">
+  <h2>Si te copa la idea de crear tu propia playa con resina y descubrir cómo la gente te pide estas piezas <em>sin que las ofrezcas…</em></h2>
+  <p>Esta clase es para vos. En vivo, gratis y con cupos limitados.</p>
+  <button class="btn btn-cream" data-open-modal>Quiero sumarme a la clase</button>
+  <small>Domingo 6 de septiembre · 19:00 hs · Acceso por email</small>
+</section>
+
+<footer>
+  © <span id="year">2026</span> Arte de Surf · Mathías Carvalho · La Barra, Uruguay · <a href="https://www.instagram.com/artedesurf/" target="_blank" rel="noopener">@artedesurf</a>
+  <div class="legal">Esta web no forma parte de Facebook o Meta Platforms. Tampoco está respaldada por Facebook Inc.</div>
+</footer>
+
+<div class="sticky"><a href="#" data-open-modal>Quiero sumarme a la clase</a></div>
+
+<!-- ============ POP UP ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="modal-bg" data-close-modal></div>
+  <div class="modal-box">
+    <button class="modal-x" type="button" data-close-modal aria-label="Cerrar">✕</button>
+    <div class="modal-top">Domingo 6 de septiembre · 19:00 hs · <strong>Gratis</strong></div>
+    <div class="fcard">
+      <h3 id="mt">Reservá tu lugar</h3>
+      <p class="fs">Dejanos tus datos y te enviamos el acceso a la clase.</p>
+      <form id="lead-form" novalidate>
+        <input type="text" id="name" required autocomplete="given-name" placeholder="Escribí tu nombre (sin apellido)">
+        <input type="email" id="email" required autocomplete="email" placeholder="Tu email (el que sí mirás)">
+        <button type="submit">Confirmar mi lugar</button>
+        <div class="ftrust">🔒 No compartimos tus datos. Cero spam.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var modal=document.getElementById('modal'), last=null;
+  function open(e){ if(e)e.preventDefault(); last=document.activeElement; modal.classList.add('open');
+    document.body.classList.add('modal-open'); setTimeout(function(){document.getElementById('name').focus()},60) }
+  function close(){ modal.classList.remove('open'); document.body.classList.remove('modal-open'); if(last)last.focus() }
+  document.querySelectorAll('[data-open-modal]').forEach(function(el){el.addEventListener('click',open)});
+  document.querySelectorAll('[data-close-modal]').forEach(function(el){el.addEventListener('click',close)});
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&modal.classList.contains('open')) close() });
+  modal.addEventListener('keydown',function(e){
+    if(e.key!=='Tab') return;
+    var f=modal.querySelectorAll('button, input'); if(!f.length) return;
+    var a=f[0], z=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}
+    else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}
+  });
+  window.abrirPopupInscripcion=open;
+  if(location.hash==='#reservar') open();
+})();
+
+document.querySelectorAll('.yt').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
+    f.allowFullscreen=true; f.title='Testimonio en video';
+    b.innerHTML=''; b.appendChild(f);
+  });
+});
+
+(function(){
+  var bar=document.querySelector('.sticky'), ref=document.querySelector('.hero .btn');
+  if(!bar||!ref) return;
+  new IntersectionObserver(function(en){ bar.classList.toggle('show', !en[0].isIntersecting) },{threshold:0}).observe(ref);
+})();
+
+document.getElementById('lead-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('name').value.trim(), m=document.getElementById('email').value.trim();
+  if(!n||!/^\S+@\S+\.\S+$/.test(m)){ alert('Completá tu nombre y un email válido.'); return; }
+  window.location.href='gracias.html';
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
