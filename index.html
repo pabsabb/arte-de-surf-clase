@@ -163,22 +163,6 @@ section.pad{padding:84px 0;content-visibility:auto;contain-intrinsic-size:auto 7
 .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
 .chip{background:var(--blanco);color:var(--azul);border-radius:100px;padding:8px 15px;font-size:13px;font-weight:600}
 
-/* PARA QUIÉN */
-.forwho{background:var(--azul-osc);color:var(--crema);content-visibility:auto;contain-intrinsic-size:auto 620px}
-.forwho .stitle{color:var(--crema)}
-.forwho .ssub{color:rgba(253,252,233,.65)}
-.forwho .tag{color:var(--agua)}
-.fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:left}
-.fw-card{background:rgba(253,252,233,.05);border:1px solid rgba(253,252,233,.12);border-radius:var(--radius);padding:30px}
-.fw-card.yes{border-left:3px solid var(--agua)}
-.fw-card.no{border-left:3px solid rgba(253,252,233,.45)}
-.fw-card h3{font-size:19px;margin-bottom:18px}
-.fw-card.yes h3{color:var(--agua)}
-.fw-card.no h3{color:rgba(253,252,233,.92)}
-.fw-card li{list-style:none;position:relative;padding-left:26px;margin-bottom:13px;font-size:15px;color:rgba(253,252,233,.85);font-weight:300}
-.fw-card li:last-child{margin-bottom:0}
-.fw-card.yes li::before{content:"✓";position:absolute;left:0;top:0;color:var(--agua);font-weight:600}
-.fw-card.no li::before{content:"✕";position:absolute;left:0;top:0;color:rgba(253,252,233,.7);font-weight:600}
 
 /* CIERRE */
 .final{background:linear-gradient(160deg,var(--azul) 0%,var(--azul-osc) 100%);color:var(--crema);text-align:center;padding:86px 24px}
@@ -216,7 +200,7 @@ section.pad{padding:84px 0;content-visibility:auto;contain-intrinsic-size:auto 7
 body.modal-open{overflow:hidden}
 
 @media (max-width:900px){
-  .hero-grid,.learn-grid,.video-grid,.fw-grid,.about-grid{grid-template-columns:1fr;gap:20px}
+  .hero-grid,.learn-grid,.video-grid,.about-grid{grid-template-columns:1fr;gap:20px}
   .hero{padding:40px 20px 54px}
   .hero-grid{gap:28px}
   .hero-copy{text-align:center}
@@ -434,35 +418,6 @@ body.modal-open{overflow:hidden}
           <span class="chip">Louvre, París</span>
           <span class="chip">La Barra, Uruguay</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PARA QUIÉN ES ============ -->
-<section class="pad forwho">
-  <div class="container">
-    <div class="center">
-      <div class="tag">Antes de anotarte</div>
-      <h2 class="stitle">Esta clase es para vos si:</h2>
-    </div>
-    <div class="fw-grid">
-      <div class="fw-card yes">
-        <h3>Sí, es para vos</h3>
-        <ul>
-          <li>Querés crear algo con tus manos, aunque sientas que no sos creativo.</li>
-          <li>Te conecta el mar y te da curiosidad crear tu propia playa en un cuadro.</li>
-          <li>Querés sumar un ingreso extra desde tu casa, a tu ritmo y con algo que te guste.</li>
-          <li>Necesitás ver un método probado antes de animarte a empezar.</li>
-        </ul>
-      </div>
-      <div class="fw-card no">
-        <h3>No es para vos si…</h3>
-        <ul>
-          <li>No te gustan las manualidades o no conectás con el océano.</li>
-          <li>Buscás otro tipo de proyectos: mi enfoque es específico en <strong>arte de playas</strong>.</li>
-          <li>No estás dispuesto a probar y equivocarte en los primeros intentos.</li>
-        </ul>
       </div>
     </div>
   </div>
