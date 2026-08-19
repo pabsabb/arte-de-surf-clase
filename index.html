@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#286181">
+<meta name="theme-color" content="#1b455c">
 <meta name="description" content="Clase en vivo y gratis: creá tu propio pedacito de mar con resina, desde cero. Martes 6 de octubre, 19:00 hs (UY). Cupos limitados.">
 <meta property="og:title" content="Creá tu propio pedacito de mar con resina, desde cero">
 <meta property="og:description" content="Clase en vivo y gratis con Mathías Carvalho. El método paso a paso para tu primera obra oceánica. Martes 6 de octubre.">
@@ -29,27 +29,25 @@
    subí loubag.woff2 a /fonts y descomentá el @font-face.
    Hasta entonces cae en Poppins 700 automáticamente.
    ============================================================ */
-/*
 @font-face{
   font-family:'Loubag';
-  src:url('fonts/loubag-bold.woff2') format('woff2');
+  src:url('fonts/loubag-700.woff2') format('woff2');
   font-weight:700; font-style:normal; font-display:swap;
 }
-*/
 
 :root{
-  /* PALETA — 3 colores de marca
-     Azul  #286181  → color principal (fondos oscuros, títulos, botones)
-     Agua  #90bcbf  → único acento (detalles sobre azul, números, bordes)
-     Crema #fdfce9  → blanco de marca (fondos claros, texto sobre azul) */
+  /* PALETA OFICIAL — mathiascarvalho.com
+     ocean #286181 · ocean-deep #1b455c · ocean-darker #123240
+     sand #e6d5c3 · cream #fdfce9 · ink #16262f · muted #8b9386
+     Tipografía: Loubag (títulos) + Poppins (texto) */
   --azul:#286181;
-  --azul-osc:#1c465e;
-  --azul-claro:#3d7ea3;
+  --azul-osc:#1b455c;
+  --azul-claro:#286181;
   --agua:#e6d5c3; /* acento: arena (antes verde agua) */
   --crema:#fdfce9;
   --blanco:#ffffff;
-  --negro:#141a1d;
-  --muted:#63737d;
+  --negro:#16262f;
+  --muted:#8b9386;
   --linea:#e4eaed;
   --radius:18px;
   --titulo:'Loubag','Poppins',system-ui,sans-serif;
