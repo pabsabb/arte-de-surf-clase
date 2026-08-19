@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#286181">
-<meta name="description" content="Clase en vivo y gratis: creá tu propio pedacito de mar con resina, desde cero. Domingo 6 de septiembre, 19:00 hs (UY). Cupos limitados.">
+<meta name="description" content="Clase en vivo y gratis: creá tu propio pedacito de mar con resina, desde cero. Martes 6 de octubre, 19:00 hs (UY). Cupos limitados.">
 <meta property="og:title" content="Creá tu propio pedacito de mar con resina, desde cero">
-<meta property="og:description" content="Clase en vivo y gratis con Mathías Carvalho. El método paso a paso para tu primera obra oceánica. Domingo 6 de septiembre.">
+<meta property="og:description" content="Clase en vivo y gratis con Mathías Carvalho. El método paso a paso para tu primera obra oceánica. Martes 6 de octubre.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/portada-v-900.jpg">
 <title>Creá tu propio pedacito de mar — Clase gratis en vivo | Mathías Carvalho</title>
@@ -18,7 +18,7 @@
 
 <!-- LCP: precarga de la foto del header -->
 <link rel="preload" as="image" type="image/avif"
-      imagesrcset="img/autoridad-h-v-400.avif 400w, img/autoridad-h-v-600.avif 600w, img/autoridad-h-v-900.avif 900w, img/autoridad-h-v-1200.avif 1200w"
+      imagesrcset="img/portada-v-400.avif 400w, img/portada-v-600.avif 600w, img/portada-v-900.avif 900w, img/portada-v-1200.avif 1200w"
       imagesizes="(max-width:900px) 300px, 400px" fetchpriority="high">
 
 <style>
@@ -88,7 +88,7 @@ img{max-width:100%;display:block}
 
 .hero-media{position:relative;max-width:400px;margin-left:auto}
 .hero-media picture,.hero-media img{display:block;width:100%;border-radius:22px}
-.hero-media img{aspect-ratio:4/5;max-height:500px;object-fit:cover;object-position:center 22%;box-shadow:0 26px 60px rgba(0,0,0,.35)}
+.hero-media img{aspect-ratio:4/5;max-height:500px;object-fit:cover;object-position:center 42%;box-shadow:0 26px 60px rgba(0,0,0,.35)}
 .hero-media::before{content:"";position:absolute;inset:-14px -14px 24px 24px;border:1px solid rgba(230,213,195,.35);border-radius:26px;pointer-events:none}
 .hero-tagcard{position:absolute;left:-16px;bottom:26px;background:var(--crema);color:var(--azul);border-radius:14px;padding:12px 18px;box-shadow:0 14px 34px rgba(0,0,0,.25)}
 .hero-tagcard strong{display:block;font-family:var(--titulo);font-size:19px;line-height:1.1}
@@ -105,7 +105,7 @@ img{max-width:100%;display:block}
 
 /* ---------- PRUEBA SOCIAL ---------- */
 .proof{background:var(--azul-osc);color:var(--crema);padding:32px 24px;border-top:1px solid rgba(253,252,233,.08)}
-.proof-grid{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.proof-line{max-width:760px;margin:0 auto;text-align:center;font-size:15.5px;font-weight:300;color:rgba(253,252,233,.85)}
 .proof-num{font-family:var(--titulo);font-size:33px;color:var(--agua)}
 .proof-lab{font-size:10.5px;color:rgba(253,252,233,.6);text-transform:uppercase;letter-spacing:.12em;font-weight:600}
 
@@ -127,7 +127,7 @@ section.pad{padding:84px 0;content-visibility:auto;contain-intrinsic-size:auto 7
 
 /* GALERÍA */
 .gal{background:var(--crema)}
-.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:740px;margin:0 auto}
 .gal-grid figure{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;box-shadow:0 14px 34px rgba(28,70,94,.18)}
 .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .gal-grid figure:hover img{transform:scale(1.05)}
@@ -177,10 +177,10 @@ section.pad{padding:84px 0;content-visibility:auto;contain-intrinsic-size:auto 7
 .fw-card h3{font-size:19px;margin-bottom:18px}
 .fw-card.yes h3{color:var(--agua)}
 .fw-card.no h3{color:rgba(253,252,233,.92)}
-.fw-card li{list-style:none;display:flex;gap:11px;margin-bottom:13px;font-size:15px;color:rgba(253,252,233,.85);font-weight:300}
+.fw-card li{list-style:none;position:relative;padding-left:26px;margin-bottom:13px;font-size:15px;color:rgba(253,252,233,.85);font-weight:300}
 .fw-card li:last-child{margin-bottom:0}
-.fw-card.yes li::before{content:"✓";color:var(--agua);font-weight:600;flex:0 0 auto}
-.fw-card.no li::before{content:"✕";color:rgba(253,252,233,.7);font-weight:600;flex:0 0 auto}
+.fw-card.yes li::before{content:"✓";position:absolute;left:0;top:0;color:var(--agua);font-weight:600}
+.fw-card.no li::before{content:"✕";position:absolute;left:0;top:0;color:rgba(253,252,233,.7);font-weight:600}
 
 /* CIERRE */
 .final{background:linear-gradient(160deg,var(--azul) 0%,var(--azul-osc) 100%);color:var(--crema);text-align:center;padding:86px 24px}
@@ -229,7 +229,7 @@ body.modal-open{overflow:hidden}
   .info-row{justify-content:center}
   /* mobile: foto arriba + CTA visible sin scrollear */
   .hero-media{order:-1;max-width:100%;margin:0 0 4px}
-  .hero-media img{aspect-ratio:16/10;max-height:210px;object-position:center 28%;border-radius:16px}
+  .hero-media img{aspect-ratio:16/10;max-height:210px;object-position:center 46%;border-radius:16px}
   .hero-media::before{display:none}
   .hero-tagcard{left:10px;bottom:10px;padding:8px 12px;border-radius:10px;background:rgba(253,252,233,.94)}
   .hero-tagcard strong{font-size:14px}
@@ -247,8 +247,8 @@ body.modal-open{overflow:hidden}
   .about-grid{gap:34px}
   .about-photo{max-width:330px;margin:0 auto}
   .gal-grid{grid-template-columns:1fr 1fr;gap:13px}
-  .gal-grid figure:last-child{display:none}
-  .proof-grid{grid-template-columns:1fr 1fr;gap:24px}
+
+  .proof-line{font-size:14px}
   section.pad{padding:58px 0}
   .btn{width:100%;padding:17px 18px;font-size:14.5px}
   .sticky-cta{display:block}
@@ -260,7 +260,7 @@ body.modal-open{overflow:hidden}
 </head>
 <body>
 
-<div class="top-bar"><span class="tb-extra">Cupos limitados — </span><strong>Clase en vivo gratis</strong> · Domingo 6 de septiembre</div>
+<div class="top-bar"><span class="tb-extra">Cupos limitados — </span><strong>Clase en vivo gratis</strong> · Martes 6 de octubre</div>
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="inicio">
@@ -271,7 +271,7 @@ body.modal-open{overflow:hidden}
       <p class="hero-sub">Aprendé en una clase en vivo el método paso a paso para crear playas con alto impacto visual, evitar los errores más comunes y transformar esta técnica en una oportunidad para emprender.</p>
 
       <div class="info-row">
-        <div class="info-card"><span class="info-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span><span><span class="info-lab">Fecha y hora</span><br><span class="info-val">Domingo 6 de septiembre · 19:00 hs</span></span></div>
+        <div class="info-card"><span class="info-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span><span><span class="info-lab">Fecha y hora</span><br><span class="info-val">Martes 6 de octubre · 19:00 hs</span></span></div>
         <div class="info-card"><span class="info-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><span><span class="info-lab">Modalidad</span><br><span class="info-val">Online con Mathías Carvalho</span></span></div>
       </div>
 
@@ -281,27 +281,21 @@ body.modal-open{overflow:hidden}
 
     <div class="hero-media">
       <picture>
-        <source type="image/avif" srcset="img/autoridad-h-v-400.avif 400w, img/autoridad-h-v-600.avif 600w, img/autoridad-h-v-900.avif 900w, img/autoridad-h-v-1200.avif 1200w" sizes="(max-width:900px) 290px, 400px">
-        <source type="image/webp" srcset="img/autoridad-h-v-400.webp 400w, img/autoridad-h-v-600.webp 600w, img/autoridad-h-v-900.webp 900w, img/autoridad-h-v-1200.webp 1200w" sizes="(max-width:900px) 290px, 400px">
-        <img src="img/autoridad-h-v-900.jpg"
-             srcset="img/autoridad-h-v-600.jpg 600w, img/autoridad-h-v-900.jpg 900w, img/autoridad-h-v-1200.jpg 1200w"
+        <source type="image/avif" srcset="img/portada-v-400.avif 400w, img/portada-v-600.avif 600w, img/portada-v-900.avif 900w, img/portada-v-1200.avif 1200w" sizes="(max-width:900px) 290px, 400px">
+        <source type="image/webp" srcset="img/portada-v-400.webp 400w, img/portada-v-600.webp 600w, img/portada-v-900.webp 900w, img/portada-v-1200.webp 1200w" sizes="(max-width:900px) 290px, 400px">
+        <img src="img/portada-v-900.jpg"
+             srcset="img/portada-v-600.jpg 600w, img/portada-v-900.jpg 900w, img/portada-v-1200.jpg 1200w"
              sizes="(max-width:900px) 290px, 400px"
              width="1200" height="1600" fetchpriority="high" decoding="async"
-             alt="Mathías Carvalho junto a sus obras de arte oceánico en resina">
+             alt="Obra de playa en resina durante el volcado">
       </picture>
-      <div class="hero-tagcard"><strong>1.500+ obras</strong><span>400+ alumnos · Louvre</span></div>
     </div>
   </div>
 </header>
 
 <!-- ============ PRUEBA SOCIAL ============ -->
 <section class="proof">
-  <div class="proof-grid">
-    <div><div class="proof-num">400+</div><div class="proof-lab">Personas formadas</div></div>
-    <div><div class="proof-num">1.500</div><div class="proof-lab">Obras creadas</div></div>
-    <div><div class="proof-num">Louvre</div><div class="proof-lab">Expuso en París</div></div>
-    <div><div class="proof-num">100%</div><div class="proof-lab">Empiezan de cero</div></div>
-  </div>
+  <p class="proof-line">No necesitás experiencia previa: la mayoría de los alumnos empezó sin haber tocado nunca la resina.</p>
 </section>
 
 <!-- ============ QUÉ VAS A APRENDER ============ -->
@@ -353,14 +347,6 @@ body.modal-open{overflow:hidden}
     <div class="gal-grid">
       <figure>
         <picture>
-          <source type="image/avif" srcset="img/portada-v-400.avif 400w, img/portada-v-600.avif 600w, img/portada-v-900.avif 900w" sizes="(max-width:900px) 45vw, 350px">
-          <source type="image/webp" srcset="img/portada-v-400.webp 400w, img/portada-v-600.webp 600w, img/portada-v-900.webp 900w" sizes="(max-width:900px) 45vw, 350px">
-          <img src="img/portada-v-900.jpg" srcset="img/portada-v-600.jpg 600w, img/portada-v-900.jpg 900w" sizes="(max-width:900px) 45vw, 350px" width="1200" height="1600" loading="lazy" decoding="async" alt="Volcado de resina turquesa sobre una obra de playa">
-        </picture>
-        <figcaption class="gal-cap">El momento del volcado: donde nace la ola</figcaption>
-      </figure>
-      <figure>
-        <picture>
           <source type="image/avif" srcset="img/foto4-v-400.avif 400w, img/foto4-v-600.avif 600w, img/foto4-v-900.avif 900w" sizes="(max-width:900px) 45vw, 350px">
           <source type="image/webp" srcset="img/foto4-v-400.webp 400w, img/foto4-v-600.webp 600w, img/foto4-v-900.webp 900w" sizes="(max-width:900px) 45vw, 350px">
           <img src="img/foto4-v-900.jpg" srcset="img/foto4-v-600.jpg 600w, img/foto4-v-900.jpg 900w" sizes="(max-width:900px) 45vw, 350px" width="1200" height="1600" loading="lazy" decoding="async" alt="Obra terminada de playa con resina sostenida por Mathías Carvalho">
@@ -393,7 +379,7 @@ body.modal-open{overflow:hidden}
           <span class="yt-play"><span></span></span>
         </button>
         <p class="v-quote">“Cuando terminé mi primer cuadro dije: ¿esta obra la hice yo? No la tengo más porque me la volaron de las manos.”</p>
-        <div class="v-meta"><div class="v-av">S</div><div><div class="v-name">Silvana</div><div class="v-role">Alumna del taller</div></div></div>
+        <div class="v-meta"><div class="v-av">S</div><div><div class="v-name">Testimonio de Silvana</div></div></div>
       </div>
 
       <div class="video-card">
@@ -402,7 +388,7 @@ body.modal-open{overflow:hidden}
           <span class="yt-play"><span></span></span>
         </button>
         <p class="v-quote">“Es una receta paso a paso de cómo realizar un cuadro de principio a fin, con un nivel de detalle asombroso. No hay forma de errarle. No podía creer el resultado porque nunca había tocado resina antes.”</p>
-        <div class="v-meta"><div class="v-av">S</div><div><div class="v-name">Silvia</div><div class="v-role">Alumna del taller</div></div></div>
+        <div class="v-meta"><div class="v-av">S</div><div><div class="v-name">Testimonio de Silvia</div></div></div>
       </div>
 
       <div class="video-card">
@@ -411,7 +397,7 @@ body.modal-open{overflow:hidden}
           <span class="yt-play"><span></span></span>
         </button>
         <p class="v-quote">“Lo que ven acá lo dice todo.”</p>
-        <div class="v-meta"><div class="v-av">S</div><div><div class="v-name">Sofi</div><div class="v-role">Su primera obra</div></div></div>
+        <div class="v-meta"><div class="v-av">S</div><div><div class="v-name">Testimonio de Sofi</div></div></div>
       </div>
 
       <div class="video-card">
@@ -420,7 +406,7 @@ body.modal-open{overflow:hidden}
           <span class="yt-play"><span></span></span>
         </button>
         <p class="v-quote">“Las explicaciones fueron clarísimas y muy fáciles de aplicar, te sacaban el miedo. Quedé copadísima con el taller: es una actividad que se hace con mucho amor.”</p>
-        <div class="v-meta"><div class="v-av">M</div><div><div class="v-name">Marina</div><div class="v-role">Su primera obra</div></div></div>
+        <div class="v-meta"><div class="v-av">M</div><div><div class="v-name">Testimonio de Marina</div></div></div>
       </div>
 
     </div>
@@ -437,7 +423,7 @@ body.modal-open{overflow:hidden}
           <source type="image/webp" srcset="img/autoridad-v-v-400.webp 400w, img/autoridad-v-v-600.webp 600w, img/autoridad-v-v-900.webp 900w" sizes="(max-width:900px) 330px, 400px">
           <img src="img/autoridad-v-v-900.jpg" srcset="img/autoridad-v-v-600.jpg 600w, img/autoridad-v-v-900.jpg 900w" sizes="(max-width:900px) 330px, 400px" width="1200" height="1600" loading="lazy" decoding="async" alt="Mathías Carvalho junto a sus obras en exposición">
         </picture>
-        <div class="about-name"><strong>Mathías Carvalho</strong><span>Artista &amp; mentor — La Barra, Uruguay</span></div>
+        <div class="about-name"><strong>Mathías Carvalho</strong><span>Artista — La Barra, Uruguay</span></div>
       </div>
       <div>
         <div class="tag">Quién soy</div>
@@ -479,7 +465,8 @@ body.modal-open{overflow:hidden}
         <h3>No es para vos si…</h3>
         <ul>
           <li>No te gustan las manualidades o no conectás con el océano.</li>
-          <li>Si bien la clase te puede servir para otro tipo de proyectos, mi enfoque es específico en <strong>arte de playas</strong>.</li>
+          <li>Buscás otro tipo de proyectos: mi enfoque es específico en <strong>arte de playas</strong>.</li>
+          <li>No estás dispuesto a probar y equivocarte en los primeros intentos.</li>
         </ul>
       </div>
     </div>
@@ -491,7 +478,7 @@ body.modal-open{overflow:hidden}
   <h2>Si te copa la idea de crear tu propia playa con resina y descubrir cómo la gente te pide estas piezas <em>sin que las ofrezcas…</em></h2>
   <p>Esta clase es para vos. Es gratis, en vivo y hay cupos limitados.</p>
   <button type="button" class="btn btn-light" data-open-modal>Quiero sumarme a la clase</button>
-  <small>Domingo 6 de septiembre · 19:00 hs · Recibís el acceso por email</small>
+  <small>Martes 6 de octubre · 19:00 hs · Recibís el acceso por email</small>
 </section>
 
 <footer>
@@ -506,7 +493,7 @@ body.modal-open{overflow:hidden}
   <div class="modal-backdrop" data-close-modal></div>
   <div class="modal-box">
     <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">✕</button>
-    <div class="modal-head">Domingo 6 de septiembre · 19:00 hs · <strong>Gratis</strong></div>
+    <div class="modal-head">Martes 6 de octubre · 19:00 hs · <strong>Gratis</strong></div>
     <div class="form-card">
       <h3 id="modal-title">Reservá tu lugar</h3>
       <p class="fc-sub">Dejanos tus datos y te enviamos el acceso a la clase.</p>
