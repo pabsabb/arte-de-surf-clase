@@ -18,8 +18,8 @@
 
 <!-- LCP: precarga de la foto del header -->
 <link rel="preload" as="image" type="image/avif"
-      imagesrcset="img/portada-v-400.avif 400w, img/portada-v-600.avif 600w, img/portada-v-900.avif 900w, img/portada-v-1200.avif 1200w"
-      imagesizes="(max-width:900px) 300px, 400px" fetchpriority="high">
+      imagesrcset="img/cover-v-400.avif 400w, img/cover-v-600.avif 600w, img/cover-v-900.avif 900w"
+      imagesizes="(max-width:900px) 100vw, 480px" fetchpriority="high">
 
 <style>
 /* ============================================================
@@ -84,9 +84,9 @@ img{max-width:100%;display:block}
 .info-lab{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(253,252,233,.55);font-weight:600}
 .info-val{font-size:14px;font-weight:600}
 
-.hero-media{position:relative;max-width:400px;margin-left:auto}
+.hero-media{position:relative;max-width:480px;margin-left:auto}
 .hero-media picture,.hero-media img{display:block;width:100%;border-radius:22px}
-.hero-media img{aspect-ratio:4/5;max-height:500px;object-fit:cover;object-position:center 42%;box-shadow:0 26px 60px rgba(0,0,0,.35)}
+.hero-media img{aspect-ratio:3/2;max-height:420px;object-fit:cover;object-position:center 45%;box-shadow:0 26px 60px rgba(0,0,0,.35)}
 .hero-media::before{content:"";position:absolute;inset:-14px -14px 24px 24px;border:1px solid rgba(230,213,195,.35);border-radius:26px;pointer-events:none}
 .hero-tagcard{position:absolute;left:-16px;bottom:26px;background:var(--crema);color:var(--azul);border-radius:14px;padding:12px 18px;box-shadow:0 14px 34px rgba(0,0,0,.25)}
 .hero-tagcard strong{display:block;font-family:var(--titulo);font-size:19px;line-height:1.1}
@@ -125,8 +125,8 @@ section.pad{padding:84px 0;content-visibility:auto;contain-intrinsic-size:auto 7
 
 /* GALERÍA */
 .gal{background:var(--crema)}
-.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:740px;margin:0 auto}
-.gal-grid figure{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;box-shadow:0 14px 34px rgba(28,70,94,.18)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gal-grid figure{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;box-shadow:0 14px 34px rgba(28,70,94,.18)}
 .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .gal-grid figure:hover img{transform:scale(1.05)}
 .gal-cap{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 16px;background:linear-gradient(transparent,rgba(28,70,94,.88));color:var(--crema);font-size:13px;font-weight:400}
@@ -207,8 +207,8 @@ body.modal-open{overflow:hidden}
   .hero-sub{margin-left:auto;margin-right:auto}
   .info-row{justify-content:center}
   /* mobile: foto arriba + CTA visible sin scrollear */
-  .hero-media{order:-1;max-width:100%;margin:0 0 4px}
-  .hero-media img{aspect-ratio:16/10;max-height:210px;object-position:center 46%;border-radius:16px}
+  .hero-media{order:-1;max-width:255px;margin:0 auto 6px}
+  .hero-media img{aspect-ratio:4/5;max-height:330px;object-position:center 30%;border-radius:18px}
   .hero-media::before{display:none}
   .hero-tagcard{left:10px;bottom:10px;padding:8px 12px;border-radius:10px;background:rgba(253,252,233,.94)}
   .hero-tagcard strong{font-size:14px}
@@ -260,13 +260,16 @@ body.modal-open{overflow:hidden}
 
     <div class="hero-media">
       <picture>
-        <source type="image/avif" srcset="img/portada-v-400.avif 400w, img/portada-v-600.avif 600w, img/portada-v-900.avif 900w, img/portada-v-1200.avif 1200w" sizes="(max-width:900px) 290px, 400px">
-        <source type="image/webp" srcset="img/portada-v-400.webp 400w, img/portada-v-600.webp 600w, img/portada-v-900.webp 900w, img/portada-v-1200.webp 1200w" sizes="(max-width:900px) 290px, 400px">
-        <img src="img/portada-v-900.jpg"
-             srcset="img/portada-v-600.jpg 600w, img/portada-v-900.jpg 900w, img/portada-v-1200.jpg 1200w"
-             sizes="(max-width:900px) 290px, 400px"
-             width="1200" height="1600" fetchpriority="high" decoding="async"
-             alt="Obra de playa en resina durante el volcado">
+        <!-- mobile: version vertical -->
+        <source media="(max-width:900px)" type="image/avif" srcset="img/cover-v-400.avif 400w, img/cover-v-600.avif 600w, img/cover-v-900.avif 900w" sizes="100vw">
+        <source media="(max-width:900px)" type="image/webp" srcset="img/cover-v-400.webp 400w, img/cover-v-600.webp 600w, img/cover-v-900.webp 900w" sizes="100vw">
+        <source media="(max-width:900px)" srcset="img/cover-v-400.jpg 400w, img/cover-v-600.jpg 600w, img/cover-v-900.jpg 900w" sizes="100vw">
+        <!-- desktop: version horizontal -->
+        <source type="image/avif" srcset="img/cover-h-800.avif 800w, img/cover-h-1200.avif 1200w, img/cover-h-1600.avif 1600w" sizes="480px">
+        <source type="image/webp" srcset="img/cover-h-800.webp 800w, img/cover-h-1200.webp 1200w, img/cover-h-1600.webp 1600w" sizes="480px">
+        <img src="img/cover-h-1200.jpg" srcset="img/cover-h-800.jpg 800w, img/cover-h-1200.jpg 1200w, img/cover-h-1600.jpg 1600w" sizes="480px"
+             width="1600" height="1067" fetchpriority="high" decoding="async"
+             alt="Mathías Carvalho con una obra de playa en resina terminada">
       </picture>
     </div>
   </div>
@@ -326,19 +329,35 @@ body.modal-open{overflow:hidden}
     <div class="gal-grid">
       <figure>
         <picture>
-          <source type="image/avif" srcset="img/foto4-v-400.avif 400w, img/foto4-v-600.avif 600w, img/foto4-v-900.avif 900w" sizes="(max-width:900px) 45vw, 350px">
-          <source type="image/webp" srcset="img/foto4-v-400.webp 400w, img/foto4-v-600.webp 600w, img/foto4-v-900.webp 900w" sizes="(max-width:900px) 45vw, 350px">
-          <img src="img/foto4-v-900.jpg" srcset="img/foto4-v-600.jpg 600w, img/foto4-v-900.jpg 900w" sizes="(max-width:900px) 45vw, 350px" width="1200" height="1600" loading="lazy" decoding="async" alt="Obra terminada de playa con resina sostenida por Mathías Carvalho">
+          <source type="image/avif" srcset="img/obra-bandeja-400.avif 400w, img/obra-bandeja-600.avif 600w, img/obra-bandeja-900.avif 900w" sizes="(max-width:900px) 45vw, 260px">
+          <source type="image/webp" srcset="img/obra-bandeja-400.webp 400w, img/obra-bandeja-600.webp 600w, img/obra-bandeja-900.webp 900w" sizes="(max-width:900px) 45vw, 260px">
+          <img src="img/obra-bandeja-600.jpg" srcset="img/obra-bandeja-400.jpg 400w, img/obra-bandeja-600.jpg 600w, img/obra-bandeja-900.jpg 900w" sizes="(max-width:900px) 45vw, 260px" loading="lazy" decoding="async" alt="Bandeja con ola de resina">
         </picture>
-        <figcaption class="gal-cap">Obra terminada: arena, espuma y profundidad</figcaption>
+        <figcaption class="gal-cap">Bandeja</figcaption>
       </figure>
       <figure>
         <picture>
-          <source type="image/avif" srcset="img/autoridad-v-v-400.avif 400w, img/autoridad-v-v-600.avif 600w, img/autoridad-v-v-900.avif 900w" sizes="(max-width:900px) 45vw, 350px">
-          <source type="image/webp" srcset="img/autoridad-v-v-400.webp 400w, img/autoridad-v-v-600.webp 600w, img/autoridad-v-v-900.webp 900w" sizes="(max-width:900px) 45vw, 350px">
-          <img src="img/autoridad-v-v-900.jpg" srcset="img/autoridad-v-v-600.jpg 600w, img/autoridad-v-v-900.jpg 900w" sizes="(max-width:900px) 45vw, 350px" width="1200" height="1600" loading="lazy" decoding="async" alt="Obras de arte oceánico en resina expuestas">
+          <source type="image/avif" srcset="img/obra-mesa-400.avif 400w, img/obra-mesa-600.avif 600w, img/obra-mesa-900.avif 900w" sizes="(max-width:900px) 45vw, 260px">
+          <source type="image/webp" srcset="img/obra-mesa-400.webp 400w, img/obra-mesa-600.webp 600w, img/obra-mesa-900.webp 900w" sizes="(max-width:900px) 45vw, 260px">
+          <img src="img/obra-mesa-600.jpg" srcset="img/obra-mesa-400.jpg 400w, img/obra-mesa-600.jpg 600w, img/obra-mesa-900.jpg 900w" sizes="(max-width:900px) 45vw, 260px" loading="lazy" decoding="async" alt="Mesa con río de resina turquesa">
         </picture>
-        <figcaption class="gal-cap">Piezas en exposición</figcaption>
+        <figcaption class="gal-cap">Mesa de living</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="img/obra-tabla-400.avif 400w, img/obra-tabla-600.avif 600w, img/obra-tabla-900.avif 900w" sizes="(max-width:900px) 45vw, 260px">
+          <source type="image/webp" srcset="img/obra-tabla-400.webp 400w, img/obra-tabla-600.webp 600w, img/obra-tabla-900.webp 900w" sizes="(max-width:900px) 45vw, 260px">
+          <img src="img/obra-tabla-600.jpg" srcset="img/obra-tabla-400.jpg 400w, img/obra-tabla-600.jpg 600w, img/obra-tabla-900.jpg 900w" sizes="(max-width:900px) 45vw, 260px" loading="lazy" decoding="async" alt="Tabla de cortar con ola de resina">
+        </picture>
+        <figcaption class="gal-cap">Tabla de cortar</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="img/obra-reloj-400.avif 400w, img/obra-reloj-600.avif 600w, img/obra-reloj-900.avif 900w" sizes="(max-width:900px) 45vw, 260px">
+          <source type="image/webp" srcset="img/obra-reloj-400.webp 400w, img/obra-reloj-600.webp 600w, img/obra-reloj-900.webp 900w" sizes="(max-width:900px) 45vw, 260px">
+          <img src="img/obra-reloj-600.jpg" srcset="img/obra-reloj-400.jpg 400w, img/obra-reloj-600.jpg 600w, img/obra-reloj-900.jpg 900w" sizes="(max-width:900px) 45vw, 260px" loading="lazy" decoding="async" alt="Reloj de pared con playa en resina">
+        </picture>
+        <figcaption class="gal-cap">Reloj de pared</figcaption>
       </figure>
     </div>
   </div>
