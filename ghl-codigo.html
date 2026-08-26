@@ -478,6 +478,14 @@ body.modal-open{overflow:hidden}
 </div>
 
 <script>
+/* ============== CONFIGURAR ANTES DE PUBLICAR ==============
+   GHL_WEBHOOK → URL del Inbound Webhook (Workflow de GHL).
+                 Vacío = el form solo redirige, NO guarda el lead.
+   URL_GRACIAS → ruta de tu página de gracias.
+   ========================================================== */
+var GHL_WEBHOOK = '';
+var URL_GRACIAS = '/gracias';
+
 // ---- Pop up de inscripción ----
 (function(){
   var modal=document.getElementById('modal'), lastFocus=null;
