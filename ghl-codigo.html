@@ -479,8 +479,8 @@ body.modal-open{overflow:hidden}
                  Vacío = el form solo redirige, NO guarda el lead.
    URL_GRACIAS → ruta de tu página de gracias.
    ========================================================== */
-var GHL_WEBHOOK = '';
-var URL_GRACIAS = '/gracias';
+var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/9I3PvmQ4St8g40QvPCQp/webhook-trigger/4771ff3a-6df1-4e93-bb84-86dd21ee1b92';
+var URL_GRACIAS = '/pagina-de-gracias';
 
 // ---- Pop up de inscripción ----
 (function(){
@@ -533,9 +533,9 @@ document.getElementById('lead-form').addEventListener('submit',function(e){
   function seguir(){ if(yaFue) return; yaFue=true; window.location.href=URL_GRACIAS; }
   if(window.fbq) fbq('track','Lead');
   if(GHL_WEBHOOK){
-    // form-urlencoded: evita el preflight CORS, que el webhook de GHL no responde
-    var datos=new URLSearchParams({first_name:n,email:m,source:'Landing clase 6 oct',page:location.href});
-    fetch(GHL_WEBHOOK,{method:'POST',body:datos}).then(seguir).catch(seguir);
+    fetch(GHL_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({first_name:n,email:m,source:'Landing clase 6 oct',page:location.href})})
+      .then(seguir).catch(seguir);
     setTimeout(seguir,2500); // por si la red se cuelga, no dejamos al lead trabado
   } else { seguir(); }
 });
