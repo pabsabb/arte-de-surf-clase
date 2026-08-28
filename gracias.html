@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123240">
+<meta name="robots" content="noindex">
+<title>¡Listo! Tu lugar está reservado — Clase en vivo con Mathías Carvalho</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+@font-face{
+  font-family:'Loubag';
+  src:url('https://pabsabb.github.io/arte-de-surf-clase/fonts/loubag-700.woff2') format('woff2');
+  font-weight:700; font-style:normal; font-display:swap;
+}
+:root{
+  --azul:#286181;
+  --azul-osc:#123240;
+  --azul-claro:#1b455c;
+  --agua:#e6d5c3;
+  --crema:#fdfce9;
+  --blanco:#ffffff;
+  --negro:#16262f;
+  --muted:#8b9386;
+  --linea:#e2e8ec;
+  --wa:#25d366;
+  --wa-osc:#1da851;
+  --titulo:'Loubag','Poppins',system-ui,sans-serif;
+  --texto:'Poppins',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--texto);color:var(--negro);background:var(--crema);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3{font-family:var(--titulo);font-weight:700;line-height:1.15;color:var(--azul-osc)}
+img{max-width:100%;display:block}
+
+.top-bar{background:var(--azul-osc);color:var(--crema);padding:10px 16px;text-align:center;font-size:12.5px;font-weight:600}
+.top-bar strong{color:var(--agua)}
+
+.wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:44px 22px 56px}
+.card{width:100%;max-width:620px;text-align:center}
+
+.check{width:74px;height:74px;margin:0 auto 24px;border-radius:50%;background:var(--azul);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(40,97,129,.3);animation:pop .45s cubic-bezier(.2,.9,.3,1.3)}
+.check svg{width:36px;height:36px;stroke:var(--crema);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+
+h1{font-size:clamp(28px,4.4vw,42px);margin-bottom:14px}
+h1 em{font-style:normal;color:var(--azul)}
+.bajada{font-size:16.5px;color:#4a5761;font-weight:300;max-width:480px;margin:0 auto 26px}
+
+.evento{display:inline-flex;align-items:center;gap:12px;background:var(--blanco);border:1px solid var(--linea);border-radius:14px;padding:14px 22px;margin-bottom:32px;text-align:left}
+.evento svg{width:20px;height:20px;stroke:var(--azul);stroke-width:1.7;fill:none;stroke-linecap:round;flex:0 0 auto}
+.evento b{display:block;font-size:15px;color:var(--azul-osc)}
+.evento span{font-size:12.5px;color:var(--muted)}
+
+.paso-uno{font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--azul);margin-bottom:14px}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;max-width:430px;margin:0 auto;background:var(--wa);color:#fff;text-decoration:none;padding:19px 26px;border-radius:13px;font-size:16px;font-weight:600;box-shadow:0 14px 32px rgba(37,211,102,.36);transition:transform .15s,background .2s}
+.btn-wa:hover{background:var(--wa-osc);transform:translateY(-2px)}
+.btn-wa svg{width:24px;height:24px;fill:#fff;flex:0 0 auto}
+
+.contador{margin-top:16px;font-size:13px;color:var(--muted)}
+.contador b{color:var(--azul);font-weight:600}
+.cancelar{background:none;border:none;color:var(--muted);font-family:inherit;font-size:12.5px;text-decoration:underline;cursor:pointer;padding:4px}
+
+.pasos{margin-top:44px;text-align:left;background:var(--blanco);border:1px solid var(--linea);border-radius:16px;padding:26px 26px 22px}
+.pasos h3{font-size:16px;margin-bottom:16px}
+.pasos li{list-style:none;display:flex;gap:13px;margin-bottom:13px;font-size:14.5px;color:#4a5761;font-weight:300}
+.pasos li:last-child{margin-bottom:0}
+.pasos .n{flex:0 0 24px;height:24px;border-radius:50%;background:var(--agua);color:var(--azul-osc);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;font-family:var(--texto)}
+.pasos a{color:var(--azul);font-weight:600}
+
+@media (max-width:600px){
+  .wrap{padding:32px 18px 44px}
+  .check{width:62px;height:62px;margin-bottom:18px}
+  .check svg{width:30px;height:30px}
+  h1{font-size:26px}
+  .bajada{font-size:15px;margin-bottom:22px}
+  .evento{width:100%;padding:13px 16px;margin-bottom:26px}
+  .btn-wa{max-width:none;font-size:15px;padding:18px 20px}
+  .pasos{margin-top:34px;padding:22px 20px 18px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">Clase en vivo gratis · <strong>Martes 6 de octubre, 19:00 hs</strong></div>
+
+<main class="wrap">
+  <div class="card">
+
+    <div class="check">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>
+    </div>
+
+    <h1>¡Listo! Tu lugar <em>está reservado</em></h1>
+    <p class="bajada">Nos vemos en la clase en vivo. Te enviamos el acceso por email, revisá tu bandeja de entrada (y el spam, por las dudas).</p>
+
+    <div class="evento">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+      <span>
+        <b>Martes 6 de octubre · 19:00 hs (Uruguay)</b>
+        <span>Online y en vivo con Mathías Carvalho</span>
+      </span>
+    </div>
+
+    <div class="paso-uno">Último paso para no perdértela</div>
+
+    <a class="btn-wa" id="btn-wa" href="https://whatsapp.com/channel/0029Vb7vbSkFsn0gcsZIxM38" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2z"/></svg>
+      Entrar al canal de WhatsApp
+    </a>
+
+    <p class="contador" id="contador">Te llevamos al canal en <b id="seg">5</b> segundos · <button class="cancelar" id="cancelar" type="button">cancelar</button></p>
+
+    <div class="pasos">
+      <h3>Qué pasa ahora</h3>
+      <ul>
+        <li><span class="n">1</span><span>Entrá al <strong>canal de WhatsApp</strong>: ahí avisamos cuando arranca la clase y compartimos el material.</span></li>
+        <li><span class="n">2</span><span>Revisá tu email: te llega la confirmación con el enlace de acceso.</span></li>
+        <li><span class="n">3</span><span><a id="cal" href="#" target="_blank" rel="noopener">Agendá la clase en tu calendario</a> para que no se te pase.</span></li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<script>
+/* ================= CONFIGURAR =================
+   CANAL_WA  → link del canal de WhatsApp
+   SEGUNDOS  → demora del redirect automático (0 = sin redirect)
+   ============================================== */
+var CANAL_WA = 'https://whatsapp.com/channel/0029Vb7vbSkFsn0gcsZIxM38';
+var SEGUNDOS = 5;
+
+document.getElementById('btn-wa').href = CANAL_WA;
+
+// evento de conversión para el pixel de Meta
+if(window.fbq) fbq('track','CompleteRegistration');
+
+// agendar en Google Calendar (6 oct 2026, 19:00 Uruguay = 22:00 UTC)
+document.getElementById('cal').href =
+  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+  + '&text=' + encodeURIComponent('Clase en vivo: creá tu pedacito de mar con resina')
+  + '&dates=20261006T220000Z/20261006T233000Z'
+  + '&details=' + encodeURIComponent('Clase online y gratuita con Mathías Carvalho. El acceso te llega por email y por el canal de WhatsApp.');
+
+// redirect automático con contador
+(function(){
+  if(!SEGUNDOS){ document.getElementById('contador').style.display='none'; return; }
+  var seg=SEGUNDOS, elSeg=document.getElementById('seg'), t;
+  function tick(){
+    seg--;
+    if(seg<=0){ window.location.href=CANAL_WA; return; }
+    elSeg.textContent=seg;
+    t=setTimeout(tick,1000);
+  }
+  t=setTimeout(tick,1000);
+  document.getElementById('cancelar').addEventListener('click',function(){
+    clearTimeout(t);
+    document.getElementById('contador').textContent='Cuando quieras, entrá al canal con el botón de arriba.';
+  });
+})();
+</script>
+</body>
+</html>
