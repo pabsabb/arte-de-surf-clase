@@ -529,12 +529,14 @@ document.getElementById('lead-form').addEventListener('submit',function(e){
   var n=document.getElementById('name').value.trim(), m=document.getElementById('email').value.trim();
   if(!n||!/^\S+@\S+\.\S+$/.test(m)){ alert('Completá tu nombre y un email válido.'); return; }
   var btn=this.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Enviando...';
-  function seguir(){ window.location.href=URL_GRACIAS; }
+  var yaFue=false;
+  function seguir(){ if(yaFue) return; yaFue=true; window.location.href=URL_GRACIAS; }
   if(window.fbq) fbq('track','Lead');
   if(GHL_WEBHOOK){
-    fetch(GHL_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({first_name:n,email:m,source:'Landing clase 6 oct',page:location.href})})
-      .then(seguir).catch(seguir);
+    // form-urlencoded: evita el preflight CORS, que el webhook de GHL no responde
+    var datos=new URLSearchParams({first_name:n,email:m,source:'Landing clase 6 oct',page:location.href});
+    fetch(GHL_WEBHOOK,{method:'POST',body:datos}).then(seguir).catch(seguir);
+    setTimeout(seguir,2500); // por si la red se cuelga, no dejamos al lead trabado
   } else { seguir(); }
 });
 
